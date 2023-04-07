@@ -29,7 +29,7 @@ constantly==15.1.0
 cssselect==1.1.0
 
 daal4py==2023.1.1
-atabricks-cli==0.17.6
+
 
 datashape==0.5.4
 
