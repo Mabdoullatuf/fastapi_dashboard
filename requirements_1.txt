@@ -22,7 +22,7 @@ clyent==1.2.1
 conda==4.3.16
 conda-build==2.1.5
 
-conda-verify==3.4.2
+
 
 constantly==15.1.0
 
