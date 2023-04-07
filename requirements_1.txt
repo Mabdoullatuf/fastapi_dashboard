@@ -112,8 +112,6 @@ python-lsp-jsonrpc==1.0.0
 
 pytz-deprecation-shim==0.1.0.post0
 
-pywin32==305.1
-
 querystring-parser==1.2.4
 queuelib==1.5.0
 
