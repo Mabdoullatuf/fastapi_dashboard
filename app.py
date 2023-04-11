@@ -51,6 +51,7 @@ response = requests.post(url, json=data)
 response_dict = response.json()
 
 probabilité = response_dict[0]["probability"]
+probabilité = round(probabilité, 2)
 prédiction = response_dict[0]["prediction"]
 
 st.write('Voici les informations du client', option_2,':')
@@ -58,11 +59,13 @@ st.write('Voici les informations du client', option_2,':')
 st.dataframe(display_client)
 
 #st.write(response.json())
-if prédiction==1 :
-    st.write('Le client', option_2,' est éligible à un prêt.')
-else :
-    st.write('Le client', option_2,' n\'est pas éligible à un prêt, augmenter sa valeur de prédiction au dessus de 50% lui permettra de le devenir.')
-#st.write(response_dict[0]["probability"])
+
+
+if prédiction == 1:
+    st.write('<p style="color: red; font-weight: bold; font-size: 24px;">Le client {} est éligible à un prêt avec une probabilité de {}%.</p>'.format(option_2, probabilité*100), unsafe_allow_html=True)
+else:
+    st.write('<p style="color: red; font-weight: bold;font-size: 24px;">Le client {} n\'est pas éligible à un prêt avec une probabilité de {}%, augmenter sa valeur de prédiction au-dessus de 50% lui permettra de le devenir.</p>'.format(option_2, probabilité*100), unsafe_allow_html=True)
+    #st.write(response_dict[0]["probability"])
 
 #________Curseur_________________________________________
 
